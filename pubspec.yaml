@@ -1,0 +1,27 @@
+name: flutter_market
+description: A new Flutter project.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  animated_splash: ^1.0.0
+  gradient_text: ^1.0.2
+  http: ^0.12.0+3
+  flutter_offline: ^0.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logonews.png
+    - assets/network.gif
