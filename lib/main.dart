@@ -9,7 +9,6 @@ final routes = <String, WidgetBuilder>{
    
   };
 
-
 void main() => runApp(
   new MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -19,5 +18,6 @@ void main() => runApp(
             duration: 2500,
             type: AnimatedSplashType.StaticDuration,
            ),
+           
     routes: routes),
     );

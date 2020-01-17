@@ -1,4 +1,4 @@
-#Tue Jan 14 14:33:20 IST 2020
+#Fri Jan 17 22:57:56 IST 2020
 base.0=/Users/gayathri/Desktop/flutter_market/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

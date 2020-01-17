@@ -11,8 +11,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   animated_splash: ^1.0.0
   gradient_text: ^1.0.2
-  http: ^0.12.0+3
-  flutter_offline: ^0.3.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -25,3 +24,7 @@ flutter:
   assets:
     - assets/logonews.png
     - assets/network.gif
+  fonts:
+  - family: Montserrat
+    fonts:
+    - asset: fonts/Montserrat-Regular.ttf
