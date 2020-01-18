@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_market/Bookmark.dart';
 import 'package:flutter_market/Discover.dart';
+import 'package:flutter_market/Feedback.dart';
 import 'package:flutter_market/Feeds.dart';
+import 'package:flutter_market/Notifications.dart';
+import 'package:flutter_market/Privacy.dart';
+import 'package:flutter_market/Terms.dart';
 import 'package:gradient_text/gradient_text.dart';
 
 class Homescreen extends StatefulWidget {
@@ -89,7 +94,11 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                           color: Color(0xff4181ee),
                           fontFamily: 'Montserrat'
                         )),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>Bookmarkdismiss()
+                      ));
+                    },
                   ),
                   ListTile(
                     title: Text('Notifications',
@@ -103,7 +112,11 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                       Icons.notifications,
                       color: Color(0xff4181ee),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                       Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>Notificationscreen()
+                      ));
+                    },
                   ),
                   ListTile(
                     title: Text('Share this app',
@@ -145,7 +158,11 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                       Icons.arrow_forward_ios,
                       color: Color(0xff4181ee),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>Feedbackscreen()
+                      ));
+                    },
                   ),
                   ListTile(
                     title: Text('Terms and conditions',
@@ -158,7 +175,11 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                       Icons.arrow_forward_ios,
                       color: Color(0xff4181ee),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                                            Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>Termsconditions()
+                      ));
+                    },
                   ),
                   ListTile(
                     title: Text('Privacy',
@@ -172,7 +193,11 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
                       Icons.arrow_forward_ios,
                       color: Color(0xff4181ee),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                                            Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>Privacy()
+                      ));
+                    },
                   )
                 ],
               ),

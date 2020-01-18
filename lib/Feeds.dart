@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_market/Newsdescription.dart';
+import 'package:flutter_market/Newsfeedswiper.dart';
 
 class Feeds extends StatefulWidget {
   _FeedsState createState() => _FeedsState();
@@ -41,7 +43,8 @@ class _FeedsState extends State<Feeds> {
           "https://www.thehindu.com/sport/athletics/q0mym7/article30569385.ece/alternates/FREE_355/TH15KUMAR",
       "headline": "Khelo India Youth Games | Ancy and Nuzrat claim gold medals",
       "description":
-          "Yashwant Laveti of Andhra Pradesh gave a sparkling performance to bag the boys’ under-21 110m hurdles crown on the final day of athletics in the Khelo"
+          "Yashwant Laveti of Andhra Pradesh gave a sparkling performance to bag the boys’ under-21 110m hurdles crown on the final day of athletics in the Khelo",
+      "author":"By India Today"
     },
     {
       "image":
@@ -49,14 +52,16 @@ class _FeedsState extends State<Feeds> {
       "headline":
           "Cotton research bodies in India, Uganda to develop new seed variety",
       "description":
-          "The Cotton Development and Research Association (CDRA) of Southern India Mills’ Association has signed an agreement with Cotton Development"
+          "The Cotton Development and Research Association (CDRA) of Southern India Mills’ Association has signed an agreement with Cotton Development",
+      "author":"By India Today"
     },
     {
       "image":
           "https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-ommftknk3mtdq0dbjakdbpjjh3-20190117015300.Medi.jpeg",
       "headline": "Police makes arrangements for ‘Kaanum Pongal’ in Chennai",
       "description":
-          "Elaborate security arrangements have been made by the Chennai city police and other authorities as thousands of visitors are expected to visit the Marina,"
+          "Elaborate security arrangements have been made by the Chennai city police and other authorities as thousands of visitors are expected to visit the Marina,",
+      "author":"By India Today"
     },
     {
       "image":
@@ -64,14 +69,16 @@ class _FeedsState extends State<Feeds> {
       "headline":
           "'Pattas' movie review: Masala and martial arts come together in this predictable outing",
       "description":
-          "His films rarely overwhelm the viewer with a particular sentiment — for example the father-daughter sentiment in Viswasam. His heroes are not infallible, but they do overcome the difficult situations they are presented with."
+          "His films rarely overwhelm the viewer with a particular sentiment — for example the father-daughter sentiment in Viswasam. His heroes are not infallible, but they do overcome the difficult situations they are presented with.",
+      "author":"By India Today"
     },
     {
       "image":
           "https://th.thgim.com/news/cities/Kochi/f6z04x/article30553004.ece/alternates/FREE_435/13-KI-JAIN-IMPLOSION",
       "headline": "PCB to release findings on pollution levels within a week",
       "description":
-          "The demolition of Jain Coral Cove apartment complex was completed by 11.05 a.m. on Sunday, and emissions were observed as expected, said a Kerala State"
+          "The demolition of Jain Coral Cove apartment complex was completed by 11.05 a.m. on Sunday, and emissions were observed as expected, said a Kerala State",
+     "author":"By India Today"
     }
   ];
   Widget build(BuildContext context) {
@@ -107,7 +114,8 @@ class _FeedsState extends State<Feeds> {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: topstories.length,
-                itemBuilder: (context, int index) {
+                itemBuilder: (context, int index) 
+                {
                   return Container(
                       margin: EdgeInsets.only(left: 20, top: 10, bottom: 10,right: 10),
                       width: 100,
@@ -157,7 +165,11 @@ class _FeedsState extends State<Feeds> {
                 Padding(
                     padding: EdgeInsets.only(top: 10, right: 20),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=>Newsfeedswipe()
+                        ));
+                      },
                       child: Text('View all',
                           style: TextStyle(
                               color: Color(0xff4181ee),
@@ -188,7 +200,17 @@ class _FeedsState extends State<Feeds> {
                 scrollDirection: Axis.vertical,
                 itemCount: latestnews.length,
                 itemBuilder: (context, int index) {
-                  return Stack(
+                  return InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>Newsdescription(
+                        headernews: latestnews[index]['headline'],
+                        mainImage: latestnews[index]['image'],
+                        authorName: latestnews[index]['author'],
+                        descriptor: latestnews[index]['description'],
+                      )));
+                    },
+                    child: Stack(
                     children: <Widget>[
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -306,6 +328,7 @@ class _FeedsState extends State<Feeds> {
                         ],
                       ),
                     ],
+                  ),
                   );
                 },
               ),
